@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  withRouter
+} from 'react-router-dom';
+
+const AppWithRouter = withRouter(App);
 
 ReactDOM.render(
-  <Router>
-    <App />
+  <Router >
+    <AppWithRouter />
   </Router>,
   document.getElementById('root')
 );
