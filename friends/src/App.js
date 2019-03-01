@@ -6,7 +6,8 @@ import { Container }  from 'reactstrap';
 import 'axios-progress-bar/dist/nprogress.css'
 import { loadProgressBar } from 'axios-progress-bar'
 import Nav from './components/Nav'
-import AddFriend from './components/FriendForm'
+import AddFriend from './components/FriendForm';
+import SearchBar from './components/Search'
 
 class App extends Component {
   constructor(){
@@ -79,6 +80,7 @@ class App extends Component {
     return (
     <Container>
         <Nav />
+        {/* <SearchBar /> */}
         <AddFriend addFriend={this.addFriend} updateDatabase={this.updateDatabase} deleteHandler={this.deleteHandler} update={this.state.update} showUpdate={this.state.showUpdate} resetHandler={this.resetHandler} />
         <Route exact path="/" render={(props) => <FriendsList {...props} updateHandler={this.updateFriend} friends={this.state.friends} />} />
     </Container>

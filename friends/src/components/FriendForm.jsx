@@ -58,6 +58,7 @@ class AddFriend extends Component {
 		let value = "";
 		if (e.target.type === "number") {
 			value = Number(e.target.value);
+			console.log(value);
 		} else {
 			value = e.target.value;
 		}
@@ -72,7 +73,7 @@ class AddFriend extends Component {
 	submitHandler = e => {
 		e.preventDefault();
 		this.props.addFriend(this.state.inputs);
-		this.setState({
+		this.setState({	
 			collapse: false,
 			inputs: {
 				name: "",
@@ -159,16 +160,14 @@ class AddFriend extends Component {
 										</InputGroup>
 									</Col>
 									<Col>
-										<InputGroup>
-											<Input
-												placeholder='Age'
-												type='number'
-												name='age'
-												value={this.state.inputs.age}
-												onChange={this.changeHandler}
-												required
-											/>
-										</InputGroup>
+										<Input
+											placeholder='Age'
+											type='number'
+											name='age'
+											value={this.state.inputs.age}
+											onChange={this.changeHandler}
+											required
+										/>
 									</Col>
 								</Row>
 								<br />
